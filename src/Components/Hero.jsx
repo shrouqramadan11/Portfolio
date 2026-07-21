@@ -1,10 +1,12 @@
 export default function Hero() {
   return (
-    <section className="bg-gray-900 text-white min-h-screen flex items-center">
+    <section
+      id="hero"
+      className="bg-gray-900 text-white min-h-screen flex items-center"
+    >
       <div className="max-w-7xl mx-auto px-6 py-16">
-
         <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-20">
-
+          {/* Left */}
           <div className="max-w-xl">
             <span className="text-violet-500 font-medium tracking-widest uppercase">
               Front-End Developer
@@ -22,28 +24,34 @@ export default function Hero() {
             </p>
 
             <div className="mt-10 flex flex-wrap gap-5">
-              <button className="bg-violet-600 hover:bg-violet-700 px-8 py-3 rounded-xl font-medium transition duration-300">
+              <a
+                href="/Shrouq Ramadan-Frontend.pdf"
+                download
+                className="bg-violet-600 hover:bg-violet-700 px-8 py-3 rounded-xl font-medium transition-all duration-300 hover:scale-105"
+              >
                 Download CV
-              </button>
+              </a>
 
-              <button className="border border-violet-600 text-violet-400 hover:bg-violet-600 hover:text-white px-8 py-3 rounded-xl font-medium transition duration-300">
-                View Projects
-              </button>
+              <a
+                href="#projects"
+                className="border border-violet-600 text-violet-400 hover:bg-violet-600 hover:text-white px-8 py-3 rounded-xl font-medium transition-all duration-300 hover:scale-105"
+              >
+                Projects
+              </a>
             </div>
           </div>
 
-          <div className="relative">
-
-            <div className="absolute -inset-4 rounded-3xl bg-violet-600/20 blur-3xl"></div>
+          {/* Right */}
+          <div className="relative flex justify-center items-center">
+            {/* Glow */}
+            <div className="absolute -inset-6 rounded-full bg-violet-600/25 blur-3xl animate-pulse"></div>
 
             <img
               src="personal.png"
               alt="Shrouq Ramadan"
-              className="relative w-[400px] lg:w-[600px] rounded-3xl border border-violet-500/30 shadow-2xl"
+              className="relative float w-[380px] lg:w-[560px] rounded-3xl border border-violet-500/30 shadow-2xl transition-all duration-500 hover:scale-105"
             />
-
           </div>
-
         </div>
       </div>
     </section>

@@ -4,7 +4,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-gray-800">
+    <nav className="bg-gray-800" >
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex h-16 items-center justify-between">
 
@@ -13,33 +13,37 @@ export default function Navbar() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-6">
-            <a href="#" className="text-white bg-gray-900 px-3 py-2 rounded-md">
+            <a href="#hero" className="text-white bg-gray-900 px-3 py-2 rounded-md">
               Home
             </a>
 
-            <a href="#" className="text-gray-300 hover:text-white">
+            <a href="#about" className="text-gray-300 hover:text-white">
               About Me
             </a>
 
-            <a href="#" className="text-gray-300 hover:text-white">
+            <a href="#skills" className="text-gray-300 hover:text-white">
               Skills
             </a>
 
-            <a href="#" className="text-gray-300 hover:text-white">
+            <a href="#projects" className="text-gray-300 hover:text-white">
               Projects
             </a>
 
-            <a href="#" className="text-gray-300 hover:text-white">
+            <a href="#contact" className="text-gray-300 hover:text-white">
               Contact
             </a>
           </div>
 
           {/* Download Button */}
-          <button className="hidden md:block bg-violet-600 hover:bg-violet-700 px-5 py-2 rounded-xl text-white">
-            Download CV
-          </button>
+         
+          <a
+  href="/Shrouq Ramadan-Frontend.pdf"
+  download
+  className="hidden md:block bg-violet-600 hover:bg-violet-700 px-5 py-2 rounded-xl text-white"
+>
+  Download CV
+</a>
 
-          {/* Hamburger */}
           <button
             className="md:hidden text-white text-3xl"
             onClick={() => setIsOpen(!isOpen)}
@@ -49,33 +53,37 @@ export default function Navbar() {
 
         </div>
 
-        {/* Mobile Menu */}
         {isOpen && (
           <div className="md:hidden flex flex-col gap-3 py-4">
 
-            <a href="#" className="text-white">
+            <a href="#hero" className="text-white">
               Home
             </a>
 
-            <a href="#" className="text-gray-300">
+            <a href="#about" className="text-gray-300">
               About Me
             </a>
 
-            <a href="#" className="text-gray-300">
+            <a href="#skills" className="text-gray-300">
               Skills
             </a>
 
-            <a href="#" className="text-gray-300">
+            <a href="#projects" className="text-gray-300">
               Projects
             </a>
 
-            <a href="#" className="text-gray-300">
+            <a href="#contact" className="text-gray-300">
               Contact
             </a>
 
-            <button className="bg-violet-600 py-2 rounded-lg mt-3">
-              Download CV
-            </button>
+                  
+          <a
+  href="/Shrouq Ramadan-Frontend.pdf"
+  download
+  className="hidden md:block bg-violet-600 hover:bg-violet-700 px-5 py-2 rounded-xl text-white"
+>
+  Download CV
+</a>
 
           </div>
         )}

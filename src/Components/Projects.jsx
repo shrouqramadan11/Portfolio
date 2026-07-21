@@ -2,24 +2,26 @@ const projects = [
   {
     title: "Restaurant Management System",
     description:
-      "A responsive restaurant management website with an admin dashboard and customer interface.",
+      "A responsive restaurant management website with an admin dashboard and customer interface. Source Code available on GitHub. Live demo is currently unavailable.",
     technologies: ["React", "PHP", "MySQL"],
-    github: "https://github.com/shrouqramadan11/",
-    live: "#",
+    github: "https://github.com/shrouqramadan11/Restuarant.git",
+        live: "https://github.com/shrouqramadan11/Restuarant.git",
+
+
   },
   {
     title: "Portfolio Website",
     description:
       "My personal portfolio showcasing my projects, skills, and experience.",
     technologies: ["React", "Tailwind CSS"],
-    github: "#",
-    live: "#",
+    github: "https://github.com/shrouqramadan11/Portfolio.git",
+    live: "https://portfolio-chi-six-7ffec3awgr.vercel.app/",
   },
 ];
 
 export default function Projects() {
   return (
-    <section className="bg-gray-900 text-white py-20">
+    <section className="bg-gray-900 text-white py-20" id="projects">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Title */}

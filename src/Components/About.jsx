@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <section className="bg-gray-900 text-white py-20">
+    <section className="bg-gray-900 text-white py-20" id="about">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Section Title */}

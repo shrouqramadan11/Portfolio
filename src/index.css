@@ -8,3 +8,23 @@ html, body{
 #logo{
 font-family: 'Cinzel', serif;
 }
+html {
+  scroll-behavior: smooth;
+}
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.float {
+  animation: floating 4s ease-in-out infinite;
+}

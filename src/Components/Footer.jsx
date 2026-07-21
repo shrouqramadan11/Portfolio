@@ -1,6 +1,8 @@
+import {  FaGithub, FaLinkedin  } from "react-icons/fa";
+
 export default function Footer() {
   return (
-    <footer className="bg-gray-950 border-t border-gray-800">
+    <footer className="bg-gray-950 border-t border-gray-800" id="footer">
       <div className="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
 
         {/* Logo / Name */}
@@ -15,23 +17,26 @@ export default function Footer() {
 
         {/* Social Links */}
         <div className="flex items-center gap-6">
-          <a
-            href="https://github.com/shrouqramadan11"
-            target="_blank"
-            rel="noreferrer"
-            className="text-gray-400 hover:text-violet-500 transition"
-          >
-            GitHub
-          </a>
-
-          <a
-            href="https://linkedin.com/in/shrouq-ramadan-a050b7305"
-            target="_blank"
-            rel="noreferrer"
-            className="text-gray-400 hover:text-violet-500 transition"
-          >
-            LinkedIn
-          </a>
+         
+                     <a
+                       href="https://github.com/shrouqramadan11"
+                       target="_blank"
+                       rel="noreferrer"
+                       aria-label="GitHub"
+                       className="text-gray-500 text-3xl transition duration-300 hover:scale-130 hover:text-gray-400"
+                     >
+                       <FaGithub />
+                     </a>
+         
+                     <a
+                       href="https://linkedin.com/in/shrouq-ramadan-a050b7305"
+                       target="_blank"
+                       rel="noreferrer"
+                       aria-label="LinkedIn"
+                       className="text-gray-500 text-3xl transition duration-300 hover:scale-130 hover:text-gray-400"
+                     >
+                       <FaLinkedin />
+                       </a>
 
           
         </div>
