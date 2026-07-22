@@ -10,6 +10,7 @@ import {
 
 import { SiTailwindcss } from "react-icons/si";
 
+
 const skills = [
   {
     name: "HTML5",
@@ -41,17 +42,25 @@ const skills = [
   },
   {
     name: "GitHub",
-    icon: <FaGithub className="text-6xl text-white" />,
+    icon: <FaGithub className="text-6xl text-gray-900 dark:text-white" />,
   },
 ];
+
 
 export default function Skills() {
   return (
     <section
       id="skills"
-      className="bg-gray-900 text-white py-20"
+      className="
+      py-20
+      bg-gray-100 text-gray-900
+      dark:bg-gray-900 dark:text-white
+      transition-colors duration-300
+      "
     >
+
       <div className="max-w-6xl mx-auto px-6">
+
         {/* Section Title */}
         <h2 className="text-4xl font-bold">
           My <span className="text-violet-500">Skills</span>
@@ -59,22 +68,56 @@ export default function Skills() {
 
         <div className="w-20 h-1 bg-violet-500 rounded-full mt-3 mb-12"></div>
 
+
         {/* Skills Grid */}
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
           {skills.map((skill) => (
+
             <div
               key={skill.name}
-              className="bg-gray-800 border border-gray-700 rounded-2xl p-8 flex flex-col items-center justify-center gap-5 hover:border-violet-500 hover:bg-gray-700 hover:-translate-y-2 hover:shadow-xl hover:shadow-violet-500/20 transition-all duration-300 cursor-pointer"
+              className="
+              bg-white dark:bg-gray-800
+              border border-gray-300 dark:border-gray-700
+              rounded-2xl p-8
+
+              flex flex-col items-center justify-center
+              gap-5
+
+              hover:border-violet-500
+              hover:bg-gray-200
+              dark:hover:bg-gray-700
+
+              hover:-translate-y-2
+              hover:shadow-xl
+              hover:shadow-violet-500/20
+
+              transition-all duration-300
+              cursor-pointer
+              "
             >
+
               {skill.icon}
 
-              <h3 className="text-lg font-semibold text-gray-200">
+
+              <h3
+                className="
+                text-lg font-semibold
+                text-gray-900
+                dark:text-gray-200
+                "
+              >
                 {skill.name}
               </h3>
+
             </div>
+
           ))}
+
         </div>
+
       </div>
+
     </section>
   );
 }
