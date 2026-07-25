@@ -8,6 +8,15 @@ const projects = [
     live: "https://github.com/shrouqramadan11/Restuarant.git",
   },
   {
+    title: "Todo-List app",
+    description:
+      "A modern and responsive Todo List application built with React. Users can add, edit, delete, and mark tasks as completed. The app also supports filtering tasks by All, Active, and Completed status. Built using React Hooks (useState, useEffect, and useRef) with React Icons for an interactive user experience.",
+    technologies: ["React", "Tailwind CSS"],
+    github: "https://github.com/shrouqramadan11/todo-app.git",
+    live: "https://todo-app-one-kappa-64.vercel.app/",
+  },
+  
+  {
     title: "Portfolio Website",
     description:
       "My personal portfolio showcasing my projects, skills, and experience.",
@@ -15,6 +24,7 @@ const projects = [
     github: "https://github.com/shrouqramadan11/Portfolio.git",
     live: "https://portfolio-chi-six-7ffec3awgr.vercel.app/",
   },
+  
 ];
 
 
