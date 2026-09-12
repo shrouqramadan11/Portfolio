@@ -17,12 +17,12 @@ const projects = [
   },
   
   {
-    title: "Portfolio Website",
+    title: "E-commerce store",
     description:
       "My personal portfolio showcasing my projects, skills, and experience.",
-    technologies: ["React", "Tailwind CSS"],
-    github: "https://github.com/shrouqramadan11/Portfolio.git",
-    live: "https://portfolio-chi-six-7ffec3awgr.vercel.app/",
+    technologies: ["React", "Tailwind CSS" , "Framer Motion" ,"REST API"],
+    github: "https://github.com/shrouqramadan11/ITI_Graduation_Project.git",
+    live: "https://iti-graduation-project-413p.vercel.app/",
   },
   
 ];
