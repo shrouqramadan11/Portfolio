@@ -1,27 +1,30 @@
 @import "tailwindcss";
 
-html, body{
-    padding:0;
-    margin:0;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-#logo{
-font-family: 'Cinzel', serif;
-}
+/* Import Cinzel font for logo */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+
+/* Base Styles */
 html {
   scroll-behavior: smooth;
 }
+
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+#logo {
+  font-family: 'Cinzel', serif;
+}
+
+/* Custom Floating Animation */
 @keyframes floating {
-  0% {
+  0%, 100% {
     transform: translateY(0px);
   }
-
   50% {
     transform: translateY(-12px);
-  }
-
-  100% {
-    transform: translateY(0px);
   }
 }
 
@@ -29,3 +32,20 @@ html {
   animation: floating 4s ease-in-out infinite;
 }
 
+/* Accessibility: Disable smooth scroll for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .float {
+    animation: none;
+  }
+}
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: smooth !important;
+}

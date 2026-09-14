@@ -1,134 +1,131 @@
-import { useState } from "react";
-import ThemeToggle from "./ThemeToggle";
+import { useState } from 'react';
+import { NavLink, Link } from 'react-router-dom';
+import lightLogo from "../assets/logo-light-mood.png";
+import darkLogo from "../assets/logo-black-mood.png";
 
 export default function Navbar({ dark, setDark }) {
   const [isOpen, setIsOpen] = useState(false);
 
+  const navItems = [
+    { name: 'Home', path: '/' },
+    { name: 'About Me', path: '/about' },
+    { name: 'Skills', path: '/skills' },
+    { name: 'Projects', path: '/projects' },
+    { name: 'Contact', path: '/contact' },
+  ];
+
   return (
-    <nav className="bg-white dark:bg-gray-800 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex h-16 items-center justify-between">
+    <header className="relative z-30 max-w-7xl w-full mx-auto px-6 py-6 transition-colors duration-500">
+      <div className="flex items-center justify-between">
+        {/* SR Logo */}
+            <Link 
+        to="/" 
+        onClick={() => setIsOpen(false)}
+        className="inline-block"
+      >
+        <img 
+          src={lightLogo} 
+          alt="Logo Light" 
+          className="h-10 w-auto block dark:hidden" 
+        />
+        
+        <img 
+          src={darkLogo} 
+          alt="Logo Dark" 
+          className="h-10 w-auto hidden dark:block" 
+        />
+      </Link>
 
-          {/* Logo */}
-          <h1
-            id="logo"
-            className="text-2xl font-bold text-gray-900 dark:text-white transition-colors"
+        {/* Right Controls */}
+        <div className="flex items-center space-x-4 sm:space-x-6">
+          
+          {/* Navigation Items (Visible on Tablet and Desktop: sm and up) */}
+          <nav className="hidden sm:flex items-center space-x-6 md:space-x-8 text-sm font-medium">
+            {navItems.map((item) => (
+              <NavLink
+                key={item.name}
+                to={item.path}
+                className={({ isActive }) =>
+                  `transition-colors duration-300 ${
+                    isActive
+                      ? 'text-purple-600 dark:text-purple-400 font-semibold'
+                      : 'text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white'
+                  }`
+                }
+              >
+                {item.name}
+              </NavLink>
+            ))}
+          </nav>
+
+          {/* Dark / Light Toggle Button */}
+          <button
+            onClick={() => setDark(!dark)}
+            aria-label="Toggle Theme"
+            className="p-2.5 rounded-xl border border-gray-300 dark:border-white/10 bg-gray-200/60 dark:bg-white/5 text-gray-800 dark:text-white hover:scale-105 transition-all duration-300 cursor-pointer"
           >
-            SR
-          </h1>
+            {dark ? '☀️' : '🌙'}
+          </button>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-6">
-            <a
-              href="#hero"
-              className="px-3 py-2 rounded-md bg-gray-200 text-gray-900 hover:bg-gray-300 transition
-                         dark:bg-gray-900 dark:text-white dark:hover:bg-gray-700"
+          {/* Hamburger Toggle (Mobile Only: hidden on sm and up) */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle Navigation Menu"
+            className="sm:hidden p-2.5 rounded-xl border border-gray-300 dark:border-white/10 bg-gray-200/60 dark:bg-white/5 text-gray-800 dark:text-white focus:outline-none transition-all duration-300 cursor-pointer"
+          >
+            <svg
+              className="w-6 h-6 transition-transform duration-300"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
             >
-              Home
-            </a>
-
-            <a
-              href="#about"
-              className="text-gray-700 hover:text-violet-600 transition
-                         dark:text-gray-300 dark:hover:text-white"
-            >
-              About Me
-            </a>
-
-            <a
-              href="#skills"
-              className="text-gray-700 hover:text-violet-600 transition
-                         dark:text-gray-300 dark:hover:text-white"
-            >
-              Skills
-            </a>
-
-            <a
-              href="#projects"
-              className="text-gray-700 hover:text-violet-600 transition
-                         dark:text-gray-300 dark:hover:text-white"
-            >
-              Projects
-            </a>
-
-            <a
-              href="#contact"
-              className="text-gray-700 hover:text-violet-600 transition
-                         dark:text-gray-300 dark:hover:text-white"
-            >
-              Contact
-            </a>
-          </div>
-
-          <div className="flex items-center gap-4">
-            <ThemeToggle dark={dark} setDark={setDark} />
-
-            <a
-              href="/Shrouq Ramadan-Frontend.pdf"
-              download
-              className="hidden md:block bg-violet-600 hover:bg-violet-700 px-5 py-2 rounded-xl text-white transition"
-            >
-              Download CV
-            </a>
-
-            <button
-              className="md:hidden text-3xl text-gray-900 dark:text-white"
-              onClick={() => setIsOpen(!isOpen)}
-            >
-              ☰
-            </button>
-          </div>
+              {isOpen ? (
+                /* Close Icon (X) */
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                /* Hamburger Icon */
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              )}
+            </svg>
+          </button>
         </div>
-
-        {isOpen && (
-          <div className="md:hidden flex flex-col gap-3 py-4">
-
-            <a
-              href="#hero"
-              className="text-gray-900 dark:text-white"
-            >
-              Home
-            </a>
-
-            <a
-              href="#about"
-              className="text-gray-700 dark:text-gray-300"
-            >
-              About Me
-            </a>
-
-            <a
-              href="#skills"
-              className="text-gray-700 dark:text-gray-300"
-            >
-              Skills
-            </a>
-
-            <a
-              href="#projects"
-              className="text-gray-700 dark:text-gray-300"
-            >
-              Projects
-            </a>
-
-            <a
-              href="#contact"
-              className="text-gray-700 dark:text-gray-300"
-            >
-              Contact
-            </a>
-
-            <a
-              href="/Shrouq Ramadan-Frontend.pdf"
-              download
-              className="bg-violet-600 hover:bg-violet-700 px-5 py-2 rounded-xl text-white w-fit"
-            >
-              Download CV
-            </a>
-
-          </div>
-        )}
       </div>
-    </nav>
+
+      {/* Mobile-Only Dropdown Drawer */}
+      <div
+        className={`sm:hidden transition-all duration-300 ease-in-out overflow-hidden ${
+          isOpen ? 'max-h-96 opacity-100 mt-4' : 'max-h-0 opacity-0'
+        }`}
+      >
+        <nav className="flex flex-col space-y-4 p-6 rounded-2xl border border-gray-200 dark:border-white/10 bg-white/90 dark:bg-[#121526]/90 backdrop-blur-md shadow-xl">
+          {navItems.map((item) => (
+            <NavLink
+              key={item.name}
+              to={item.path}
+              onClick={() => setIsOpen(false)}
+              className={({ isActive }) =>
+                `text-base font-medium transition-colors duration-300 ${
+                  isActive
+                    ? 'text-purple-600 dark:text-purple-400 font-semibold'
+                    : 'text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white'
+                }`
+              }
+            >
+              {item.name}
+            </NavLink>
+          ))}
+        </nav>
+      </div>
+    </header>
   );
 }
